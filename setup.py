@@ -6,7 +6,8 @@ from setuptools import setup
 import versioneer
 
 DISTNAME = 'pyfolio'
-DESCRIPTION = "pyfolio is a Python library for performance and risk analysis of financial portfolios"
+DESCRIPTION = "pyfolio is a Python library for performance"
+"and risk analysis of financial portfolios"
 LONG_DESCRIPTION = """pyfolio is a Python library for performance and risk analysis of
 financial portfolios developed by `Quantopian Inc`_. It works well with the
 `Zipline`_ open source backtesting library.
@@ -24,7 +25,6 @@ AUTHOR = 'Quantopian Inc'
 AUTHOR_EMAIL = 'opensource@quantopian.com'
 URL = "https://github.com/quantopian/pyfolio"
 LICENSE = "Apache License, Version 2.0"
-VERSION = "0.8.0"
 
 classifiers = ['Development Status :: 4 - Beta',
                'Programming Language :: Python',
@@ -39,10 +39,7 @@ classifiers = ['Development Status :: 4 - Beta',
                'Topic :: Scientific/Engineering :: Mathematics',
                'Operating System :: OS Independent']
 
-if (sys.version_info.major, sys.version_info.minor) >= (3, 3):
-    support_ipython_6 = True
-else:
-    support_ipython_6 = False
+support_ipython_6 = (sys.version_info >= (3, 3))
 
 install_reqs = [
     'ipython>=3.2.3' if support_ipython_6 else 'ipython>=3.2.3, <6',
@@ -53,17 +50,14 @@ install_reqs = [
     'scipy>=0.14.0',
     'scikit-learn>=0.16.1',
     'seaborn>=0.7.1',
-    'pandas-datareader>=0.2',
-    'empyrical>=0.3.4'
+    'empyrical>=0.5.0',
 ]
 
 test_reqs = ['nose>=1.3.7', 'nose-parameterized>=0.5.0', 'runipy>=0.1.3']
-bayesian_reqs = ['pymc3 >= 3.1']
 
 extras_reqs = {
-    'bayesian': bayesian_reqs,
     'test': test_reqs,
-    'all': test_reqs + bayesian_reqs,
+    'all': test_reqs
 }
 
 if __name__ == "__main__":
