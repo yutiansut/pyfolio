@@ -5,7 +5,7 @@ from setuptools import setup
 
 import versioneer
 
-DISTNAME = 'pyfolio'
+DISTNAME = 'pyfolio_qa'
 DESCRIPTION = "pyfolio is a Python library for performance"
 "and risk analysis of financial portfolios"
 LONG_DESCRIPTION = """pyfolio is a Python library for performance and risk analysis of
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     setup(
         name=DISTNAME,
         cmdclass=versioneer.get_cmdclass(),
-        version=versioneer.get_version(),
+        version='0.0.1',
         maintainer=MAINTAINER,
         maintainer_email=MAINTAINER_EMAIL,
         description=DESCRIPTION,
